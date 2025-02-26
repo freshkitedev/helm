@@ -1,0 +1,19 @@
+replicaCount: 1
+
+frontend:
+  image: 487431053141.dkr.ecr.us-east-1.amazonaws.com/frontend:v1
+  containerPort: 3000
+  service:
+    type: ClusterIP
+    port: 80
+
+backend:
+  image: 487431053141.dkr.ecr.us-east-1.amazonaws.com/backend:v1
+  containerPort: 5000
+  service:
+    type: ClusterIP
+    port: 5000
+
+ingress:
+  enabled: true
+  host: freshkite.in
