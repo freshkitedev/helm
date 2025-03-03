@@ -19,3 +19,6 @@ spec:
           image: {{ .Values.frontend.image }}
           ports:
             - containerPort: {{ .Values.frontend.containerPort }}
+          env:
+            - name: REACT_APP_API_URL
+              value: "http://todo.freshkite.in/api"

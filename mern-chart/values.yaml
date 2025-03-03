@@ -1,14 +1,14 @@
 replicaCount: 1
 
 frontend:
-  image: 487431053141.dkr.ecr.us-east-1.amazonaws.com/frontend:v1
-  containerPort: 3000
+  image: 487431053141.dkr.ecr.us-east-1.amazonaws.com/bala_frontend:v1
+  containerPort: 80
   service:
-    type: ClusterIP
+    type: LoadBalancer
     port: 80
 
 backend:
-  image: 487431053141.dkr.ecr.us-east-1.amazonaws.com/backend:v1
+  image: 487431053141.dkr.ecr.us-east-1.amazonaws.com/bala_backend:v1
   containerPort: 5000
   service:
     type: ClusterIP
@@ -16,4 +16,4 @@ backend:
 
 ingress:
   enabled: true
-  host: freshkite.in
+  host: todo.freshkite.in
